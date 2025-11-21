@@ -9,6 +9,10 @@ const etServer = express();
 etServer.use(cors());
 etServer.use(express.json());
 
+etServer.get("/", (req, res) => {
+    res.send("Backend is running successfully ");
+});
+
 etServer.use(router);
 
 const PORT = process.env.PORT || 3000;
