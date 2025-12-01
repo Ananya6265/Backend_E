@@ -40,7 +40,6 @@ exports.loginController = async (req, res) => {
       return res.status(404).json("Invalid Email/Password");
     }
 
-    // ❗ Check Password
     if (existingUser.password !== password) {
       return res.status(401).json("Invalid Email/Password");
     }
@@ -69,10 +68,8 @@ exports.loginController = async (req, res) => {
 
 
 
-// LOGOUT (Invalidate token)
 exports.logoutController = (req, res) => {
   try {
-    // If using token, you can push token to blacklist here
 
     return res.status(200).json({
       message: "Logged out successfully"
